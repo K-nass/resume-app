@@ -1,0 +1,49 @@
+<div id="resume-preview" class="container border bg-white p-4 shadow-sm"
+    style="width: 21cm; min-height: 29.7cm; font-family: 'Segoe UI', sans-serif;">
+
+    <div class="text-center mb-4">
+        <p class="h1 fw-bold text-uppercase mb-3">
+            {{ receivedFirstName + ' ' + receivedLastName }}
+        </p>
+        <h4 class="text-muted">{{receivedJobTitleChange}}</h4>
+    </div>
+
+    <hr>
+
+    <section class="mb-4">
+        <h5 class="text-primary">Personal Information</h5>
+        <div class="row">
+            <div class="col-md-6 mb-2"><strong>Email:{{receivedEmailChange}}</strong> </div>
+            <div class="col-md-6 mb-2"><strong>Phone:</strong></div>
+            <div class="col-md-6 mb-2"><strong>Address:</strong></div>
+            <div class="col-md-6 mb-2"><strong>City:</strong></div>
+            <div class="col-md-6 mb-2"><strong>LinkedIn:</strong>
+                <a href="" target="_blank" rel="noopener noreferrer">
+                    <!-- {{ linkedIn || 'linkedin.com/in/username' }} -->
+                </a>
+            </div>
+            <div class="col-md-6 mb-2"><strong>GitHub:</strong>
+                <a href="" target="_blank" rel="noopener noreferrer">
+                    {{receivedGithubChange}}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="mb-4">
+        <h5 class="text-primary">Work Experience</h5>
+        <p><strong>Google</strong> — Software Engineer <span class="text-muted">(2020 - Present)</span></p>
+        <ul class="mb-0">
+            <li>Built scalable UI components using React</li>
+            <li>Improved performance by 30%</li>
+        </ul>
+    </section>
+
+    <section>
+        <h5 class="text-primary">Education</h5>
+        <p><strong>Stanford University</strong><br>
+            B.Sc. Computer Science, <span class="text-muted">2019</span></p>
+    </section>
+</div>

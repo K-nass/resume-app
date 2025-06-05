@@ -1,0 +1,22 @@
+<div class="container my-4">
+    <div class="row g-4">
+        <!-- Left: Basic Information -->
+        <div class="col-lg-6">
+            <div class="p-4 border rounded shadow-sm bg-light h-100">
+                <app-basic-information (firstNameChange)="onFirstNameChange($event)"
+                    (lastNameChange)="onLastNameChange($event)" (jobTitleChange)="onLastJobTitleChange($event)"
+                    (emailChange)="onEmailChange($event)"
+                    (gitHubChange)="onGithubChange($event)"></app-basic-information>
+            </div>
+        </div>
+
+        <!-- Right: Resume Preview -->
+        <div class="col-lg-6">
+            <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
+                <app-resume-preview [receivedFirstName]="firstNameChange" [receivedLastName]="lastNameChange"
+                    [receivedJobTitleChange]="jobTitleChange" [receivedEmailChange]="emailChange"
+                    [receivedGithubChange]="githubChange"></app-resume-preview>
+            </div>
+        </div>
+    </div>
+</div>

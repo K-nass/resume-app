@@ -1,0 +1,86 @@
+<div class="container-md mt-3">
+    <div class="container py-5">
+        <form>
+            <fieldset class="border p-4 rounded shadow-sm">
+                <legend class="float-none w-auto px-2">Personal Information</legend>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input [(ngModel)]="firstName" (input)="onFirstNameChange()" type="text" class="form-control"
+                            id="firstName" name="firstName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input [(ngModel)]='lastName' (input)="onLastNameChange()" type="text" class="form-control"
+                            id="lastName" name="lastName">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="jobTitle" class="form-label">Job Title</label>
+                        <input [(ngModel)]="jobTitle" (input)="onJobTitleChange()" type="text" class="form-control"
+                            id="jobTitle" placeholder="e.g., Front-End Developer" name="jobTitle">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="experience" class="form-label">Years of Experience</label>
+                        <select class="form-select" id="experience">
+                            <option selected disabled>Select experience level</option>
+                            <option value="0-1">0 to 1 year (Entry Level)</option>
+                            <option value="1-3">1 to 3 years (Junior)</option>
+                            <option value="3-5">3 to 5 years (Mid-Level)</option>
+                            <option value="5-10">5 to 10 years (Senior)</option>
+                            <option value="10+">10+ years (Expert)</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input [(ngModel)]="email" (input)="onEmailChange()" type="email" class="form-control"
+                            id="email" placeholder="example@example.com" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" placeholder="+20 123 456 7890">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country">
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="linkedinURL" class="form-label">LinkedIn</label>
+                        <input type="text" class="form-control" id="linkedinURL" placeholder="linkedin.com/in/yourname">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="githubURL" class="form-label">GitHub</label>
+                        <input [(ngModel)]="gitHub" (input)="onGithubChange()" type="text" class="form-control"
+                            id="githubURL" placeholder="github.com/yourname" name="github">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="portfolioURL" class="form-label">Portfolio / Website</label>
+                        <input type="text" class="form-control" id="portfolioURL" placeholder="yourportfolio.com">
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary mt-3 px-4">Next: Professional Summary</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
