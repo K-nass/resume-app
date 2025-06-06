@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-
+import { HandleChangeBasicService } from '../../services/handle-change-basic.service';
+import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
 @Component({
   selector: 'app-resume-preview',
   standalone: true,
@@ -8,14 +9,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './resume-preview.component.css'
 })
 export class ResumePreviewComponent {
-  @Input()
-  receivedFirstName: string = ''
-  @Input()
-  receivedLastName: string = ''
-  @Input()
-  receivedJobTitleChange: string = ''
-  @Input()
-  receivedEmailChange: string = ''
-  @Input()
-  receivedGithubChange:string = ''
+  constructor(private handleChangeBasicService: HandleChangeBasicService) { }
+  resumeData!: ResumeDataBaseInfo
+  ngOnInit() {
+    this.handleChangeBasicService.resumeData.subscribe(data => {
+      this.resumeData = data
+    })
+  }
 }

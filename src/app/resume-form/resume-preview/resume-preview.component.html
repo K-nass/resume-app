@@ -2,10 +2,8 @@
     style="width: 21cm; min-height: 29.7cm; font-family: 'Segoe UI', sans-serif;">
 
     <div class="text-center mb-4">
-        <p class="h1 fw-bold text-uppercase mb-3">
-            {{ receivedFirstName + ' ' + receivedLastName }}
-        </p>
-        <h4 class="text-muted">{{receivedJobTitleChange}}</h4>
+        <p class="h1 fw-bold text-uppercase mb-3">{{resumeData.firstName + " " + resumeData.lastName}}</p>
+        <h4 class="text-muted">{{resumeData.jobTitle}}</h4>
     </div>
 
     <hr>
@@ -13,19 +11,18 @@
     <section class="mb-4">
         <h5 class="text-primary">Personal Information</h5>
         <div class="row">
-            <div class="col-md-6 mb-2"><strong>Email:{{receivedEmailChange}}</strong> </div>
-            <div class="col-md-6 mb-2"><strong>Phone:</strong></div>
-            <div class="col-md-6 mb-2"><strong>Address:</strong></div>
-            <div class="col-md-6 mb-2"><strong>City:</strong></div>
-            <div class="col-md-6 mb-2"><strong>LinkedIn:</strong>
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <!-- {{ linkedIn || 'linkedin.com/in/username' }} -->
-                </a>
+            <div class="col-md-6 mb-2"><strong>Email:{{resumeData.email}}</strong> </div>
+            <div class="col-md-6 mb-2"><strong>Phone:{{resumeData.phone}}</strong></div>
+            <div class="col-md-6 mb-2"><strong>City:{{resumeData.city}}</strong></div>
+            <div class="col-md-6 mb-2"><strong>LinkedIn:{{resumeData.linkedInUrl}}</strong>
+                <a href="" target="_blank" rel="noopener noreferrer"> </a>
             </div>
-            <div class="col-md-6 mb-2"><strong>GitHub:</strong>
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    {{receivedGithubChange}}
-                </a>
+
+            <div class="col-md-6 mb-2"><strong>GitHub:{{resumeData.githubUrl}}</strong>
+                <a href="" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="col-md-6 mb-2"><strong>Portfolio:{{resumeData.portfolioURL}}</strong>
+                <a href="" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </div>
     </section>

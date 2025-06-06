@@ -6,21 +6,22 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input [(ngModel)]="firstName" (input)="onFirstNameChange()" type="text" class="form-control"
-                            id="firstName" name="firstName">
+                        <input [(ngModel)]="resumeData.firstName" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="firstName" name="firstName">
                     </div>
                     <div class="col-md-6">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input [(ngModel)]='lastName' (input)="onLastNameChange()" type="text" class="form-control"
-                            id="lastName" name="lastName">
+                        <label for="lastName" class="form-label">Last
+                            Name</label>
+                        <input [(ngModel)]="resumeData.lastName" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="lastName" name="lastName">
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="jobTitle" class="form-label">Job Title</label>
-                        <input [(ngModel)]="jobTitle" (input)="onJobTitleChange()" type="text" class="form-control"
-                            id="jobTitle" placeholder="e.g., Front-End Developer" name="jobTitle">
+                        <input [(ngModel)]="resumeData.jobTitle" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="jobTitle" placeholder="e.g., Front-End Developer" name="jobTitle">
                     </div>
                     <div class="col-md-6">
                         <label for="experience" class="form-label">Years of Experience</label>
@@ -39,23 +40,20 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email Address</label>
-                        <input [(ngModel)]="email" (input)="onEmailChange()" type="email" class="form-control"
-                            id="email" placeholder="example@example.com" name="email">
+                        <input [(ngModel)]="resumeData.email" (input)="onUpdateResumeData()" type="email"
+                            class="form-control" id="email" placeholder="example@example.com" name="email">
                     </div>
                     <div class="col-md-6">
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="phone" placeholder="+20 123 456 7890">
+                        <input [(ngModel)]="resumeData.phone" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="phone" placeholder="+20 123 456 7890" name="phone">
                     </div>
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col-md-8">
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="address">
-                    </div>
                     <div class="col-md-4">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country">
+                        <label for="city" class="form-label">city</label>
+                        <input [(ngModel)]="resumeData.city" (input)="onUpdateResumeData()"  type="text" class="form-control" id="country" name="city">
                     </div>
                 </div>
 
@@ -64,16 +62,16 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label for="linkedinURL" class="form-label">LinkedIn</label>
-                        <input type="text" class="form-control" id="linkedinURL" placeholder="linkedin.com/in/yourname">
+                        <input [(ngModel)]="resumeData.linkedInUrl" (input)="onUpdateResumeData()"  type="text" class="form-control" id="linkedinURL" placeholder="linkedin.com/in/yourname" name="linkedin">
                     </div>
                     <div class="col-md-4">
                         <label for="githubURL" class="form-label">GitHub</label>
-                        <input [(ngModel)]="gitHub" (input)="onGithubChange()" type="text" class="form-control"
-                            id="githubURL" placeholder="github.com/yourname" name="github">
+                        <input [(ngModel)]="resumeData.githubUrl" (input)="onUpdateResumeData()"  type="text" class="form-control" id="githubURL" placeholder="github.com/yourname"
+                            name="github">
                     </div>
                     <div class="col-md-4">
                         <label for="portfolioURL" class="form-label">Portfolio / Website</label>
-                        <input type="text" class="form-control" id="portfolioURL" placeholder="yourportfolio.com">
+                        <input [(ngModel)]="resumeData.portfolioURL" (input)="onUpdateResumeData()"  type="text" class="form-control" id="portfolioURL" placeholder="yourportfolio.com" name="Portfolio">
                     </div>
                 </div>
 

@@ -5,10 +5,8 @@ export interface ResumeDataBaseInfo {
     noOfExperience: string,
     email: string,
     phone: string,
-    address: string,
-    country: string,
+    city: string,
     linkedInUrl: string,
     githubUrl: string,
     portfolioURL: string,
-
 }

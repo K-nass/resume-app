@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { HandleChangeBasicService } from '../../services/handle-change-basic.service';
+import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
 
 @Component({
   selector: 'app-basic-information',
@@ -11,39 +12,23 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './basic-information.component.css'
 })
 export class BasicInformationComponent {
-  firstName: string = '';
-  lastName: string = '';
-  jobTitle: string = '';
-  email: string = '';
-  gitHub: string = '';
-  @Output()
-  firstNameChange = new EventEmitter<string>();
-  @Output()
-  lastNameChange = new EventEmitter<string>();
-  @Output()
-  jobTitleChange = new EventEmitter<string>()
-  @Output()
-  emailChange = new EventEmitter<string>();
-  @Output()
-  gitHubChange = new EventEmitter<string>();
+  resumeData: ResumeDataBaseInfo = {
+    firstName: '',
+    lastName: '',
+    city: '',
+    email: '',
+    githubUrl: '',
+    jobTitle: '',
+    linkedInUrl: '',
+    noOfExperience: '',
+    phone: '',
+    portfolioURL: ''
+  }
+  constructor(private handleChangeBasicService: HandleChangeBasicService) { }
 
-  onFirstNameChange() {
-    this.firstNameChange.emit(this.firstName)
+  onUpdateResumeData() {
+    this.handleChangeBasicService.updateResumeData(this.resumeData)
   }
 
-  onLastNameChange() {
-    this.lastNameChange.emit(this.lastName)
-  }
 
-  onJobTitleChange() {
-    this.jobTitleChange.emit(this.jobTitle)
-  }
-
-  onEmailChange() {
-    this.emailChange.emit(this.email)
-  }
-
-  onGithubChange() {
-    this.gitHubChange.emit(this.gitHub)
-  }
 }
