@@ -1,0 +1,10 @@
+ @media print {
+     body {
+         -webkit-print-color-adjust: exact;
+     }
+
+     #resume-preview {
+         box-shadow: none !important;
+         margin: 0 !important;
+     }
+ }

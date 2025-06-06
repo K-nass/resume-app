@@ -1,46 +1,76 @@
 <div id="resume-preview" class="container border bg-white p-4 shadow-sm"
     style="width: 21cm; min-height: 29.7cm; font-family: 'Segoe UI', sans-serif;">
 
+    <!-- Header -->
     <div class="text-center mb-4">
-        <p class="h1 fw-bold text-uppercase mb-3">{{resumeData.firstName + " " + resumeData.lastName}}</p>
-        <h4 class="text-muted">{{resumeData.jobTitle}}</h4>
+        <h1 class="display-5 fw-bold text-uppercase">{{resumeData.firstName + " " + resumeData.lastName}}</h1>
+        <p class="lead text-secondary">{{resumeData.jobTitle}}</p>
     </div>
 
     <hr>
 
+    <!-- Personal Info -->
     <section class="mb-4">
-        <h5 class="text-primary">Personal Information</h5>
+        <h5 class="text-primary mb-3"><i class="bi bi-person-vcard"></i> Personal Information</h5>
         <div class="row">
-            <div class="col-md-6 mb-2"><strong>Email:{{resumeData.email}}</strong> </div>
-            <div class="col-md-6 mb-2"><strong>Phone:{{resumeData.phone}}</strong></div>
-            <div class="col-md-6 mb-2"><strong>City:{{resumeData.city}}</strong></div>
-            <div class="col-md-6 mb-2"><strong>LinkedIn:{{resumeData.linkedInUrl}}</strong>
-                <a href="" target="_blank" rel="noopener noreferrer"> </a>
+            <div class="col-md-6 mb-2">
+                <strong>Email:</strong>
+                <a href="mailto:{{resumeData.email}}" class="text-decoration-none">{{resumeData.email}}</a>
             </div>
-
-            <div class="col-md-6 mb-2"><strong>GitHub:{{resumeData.githubUrl}}</strong>
-                <a href="" target="_blank" rel="noopener noreferrer"></a>
+            <div class="col-md-6 mb-2">
+                <strong>Phone:</strong>
+                <a href="tel:{{resumeData.phone}}" class="text-decoration-none">{{resumeData.phone}}</a>
             </div>
-            <div class="col-md-6 mb-2"><strong>Portfolio:{{resumeData.portfolioURL}}</strong>
-                <a href="" target="_blank" rel="noopener noreferrer"></a>
+            <div class="col-md-6 mb-2">
+                <strong>City:</strong> {{resumeData.city}}
+            </div>
+            <div class="col-md-6 mb-2">
+                <strong>LinkedIn:</strong>
+                <a href="{{resumeData.linkedInUrl}}" class="text-decoration-none"
+                    target="_blank">{{resumeData.linkedInUrl}}</a>
+            </div>
+            <div class="col-md-6 mb-2">
+                <strong>GitHub:</strong>
+                <a href="{{resumeData.githubUrl}}" class="text-decoration-none"
+                    target="_blank">{{resumeData.githubUrl}}</a>
+            </div>
+            <div class="col-md-6 mb-2">
+                <strong>Portfolio:</strong>
+                <a href="{{resumeData.portfolioURL}}" class="text-decoration-none"
+                    target="_blank">{{resumeData.portfolioURL}}</a>
             </div>
         </div>
     </section>
 
     <hr>
 
+    <!-- Summary -->
     <section class="mb-4">
-        <h5 class="text-primary">Work Experience</h5>
-        <p><strong>Google</strong> — Software Engineer <span class="text-muted">(2020 - Present)</span></p>
-        <ul class="mb-0">
-            <li>Built scalable UI components using React</li>
-            <li>Improved performance by 30%</li>
-        </ul>
+        <h5 class="text-primary mb-3"><i class="bi bi-card-text"></i> Summary</h5>
+        <!-- <p>{{resumeData.summary}}</p> -->
     </section>
 
-    <section>
-        <h5 class="text-primary">Education</h5>
-        <p><strong>Stanford University</strong><br>
-            B.Sc. Computer Science, <span class="text-muted">2019</span></p>
+    <hr>
+
+    <!-- Work Experience -->
+    <section class="mb-4">
+        <h5 class="text-primary mb-3"><i class="bi bi-briefcase-fill"></i> Work Experience</h5>
+        <div class="mb-3">
+            <h6 class="fw-bold">Google <span class="text-muted fw-normal">— Software Engineer (2020 - Present)</span>
+            </h6>
+            <ul class="mb-0 ps-4">
+                <li>Built scalable UI components using React</li>
+                <li>Improved performance by 30%</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-4">
+        <h5 class="text-primary mb-3"><i class="bi bi-mortarboard-fill"></i> Education</h5>
+        <div>
+            <h6 class="fw-bold mb-0">Stanford University</h6>
+            <small>B.Sc. Computer Science <span class="text-muted">— 2019</span></small>
+        </div>
     </section>
 </div>
