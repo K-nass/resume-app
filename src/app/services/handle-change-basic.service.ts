@@ -16,7 +16,7 @@ export class HandleChangeBasicService {
       linkedInUrl: '',
       noOfExperience: '',
       phone: '',
-      portfolioURL: ''
+      portfolioURL: '',
     }
   )
 

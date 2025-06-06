@@ -1,13 +1,29 @@
 <div class="container my-4">
     <div class="row g-4">
         <!-- Left: Basic Information -->
-        <div class="col-lg-6">
-            <div class="p-4 border rounded shadow-sm bg-light h-100">
-                <app-basic-information></app-basic-information>
+        <ng-container *ngIf="step == 1">
+            <div class="col-lg-6">
+                <div class="p-4 border rounded shadow-sm bg-light h-100">
+                    <app-basic-information></app-basic-information>
+                    <div class="text-end">
+                        <button (click)="goNext()" class="btn btn-primary mt-3 px-4">Next:
+                            Summary</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </ng-container>
+        <ng-container *ngIf="step == 2">
+            <div class="col-lg-6">
+                <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
+                    <app-summary></app-summary>
+                    <div class="text-end">
+                        <button (click)="goPrev()" class="btn btn-primary mt-3 px-4">back:
+                            Basic Information</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
 
-        <!-- Right: Resume Preview -->
         <div class="col-lg-6">
             <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
                 <app-resume-preview></app-resume-preview>

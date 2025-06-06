@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { HandleChangeBasicService } from '../../services/handle-change-basic.service';
 import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
+import { HandleChangeSummaryService } from '../../services/handle-change-summary.service';
 @Component({
   selector: 'app-resume-preview',
   standalone: true,
@@ -9,11 +10,15 @@ import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
   styleUrl: './resume-preview.component.css'
 })
 export class ResumePreviewComponent {
-  constructor(private handleChangeBasicService: HandleChangeBasicService) { }
+  constructor(private handleChangeBasicService: HandleChangeBasicService, private handleChangeSummaryService: HandleChangeSummaryService) { }
   resumeData!: ResumeDataBaseInfo
+  summary = ''
   ngOnInit() {
     this.handleChangeBasicService.resumeData.subscribe(data => {
       this.resumeData = data
+    })
+    this.handleChangeSummaryService.summary.subscribe(summary => {
+      this.summary = summary
     })
   }
 }

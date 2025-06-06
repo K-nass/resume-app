@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HandleChangeBasicService } from '../../services/handle-change-basic.service';
 import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-basic-information',
@@ -22,7 +24,7 @@ export class BasicInformationComponent {
     linkedInUrl: '',
     noOfExperience: '',
     phone: '',
-    portfolioURL: ''
+    portfolioURL: '',
   }
   constructor(private handleChangeBasicService: HandleChangeBasicService) { }
 

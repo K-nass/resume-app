@@ -53,7 +53,8 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label for="city" class="form-label">city</label>
-                        <input [(ngModel)]="resumeData.city" (input)="onUpdateResumeData()"  type="text" class="form-control" id="country" name="city">
+                        <input [(ngModel)]="resumeData.city" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="country" name="city">
                     </div>
                 </div>
 
@@ -62,21 +63,20 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label for="linkedinURL" class="form-label">LinkedIn</label>
-                        <input [(ngModel)]="resumeData.linkedInUrl" (input)="onUpdateResumeData()"  type="text" class="form-control" id="linkedinURL" placeholder="linkedin.com/in/yourname" name="linkedin">
+                        <input [(ngModel)]="resumeData.linkedInUrl" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="linkedinURL" placeholder="linkedin.com/in/yourname"
+                            name="linkedin">
                     </div>
                     <div class="col-md-4">
                         <label for="githubURL" class="form-label">GitHub</label>
-                        <input [(ngModel)]="resumeData.githubUrl" (input)="onUpdateResumeData()"  type="text" class="form-control" id="githubURL" placeholder="github.com/yourname"
-                            name="github">
+                        <input [(ngModel)]="resumeData.githubUrl" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="githubURL" placeholder="github.com/yourname" name="github">
                     </div>
                     <div class="col-md-4">
                         <label for="portfolioURL" class="form-label">Portfolio / Website</label>
-                        <input [(ngModel)]="resumeData.portfolioURL" (input)="onUpdateResumeData()"  type="text" class="form-control" id="portfolioURL" placeholder="yourportfolio.com" name="Portfolio">
+                        <input [(ngModel)]="resumeData.portfolioURL" (input)="onUpdateResumeData()" type="text"
+                            class="form-control" id="portfolioURL" placeholder="yourportfolio.com" name="Portfolio">
                     </div>
-                </div>
-
-                <div class="text-end">
-                    <button type="submit" class="btn btn-primary mt-3 px-4">Next: Professional Summary</button>
                 </div>
             </fieldset>
         </form>

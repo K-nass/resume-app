@@ -1,37 +1,25 @@
 import { Component } from '@angular/core';
 import { BasicInformationComponent } from "./basic-information/basic-information.component";
 import { ResumePreviewComponent } from "./resume-preview/resume-preview.component";
+import { CommonModule } from '@angular/common';
+import { SummaryComponent } from "../summary/summary.component";
+
 
 @Component({
   selector: 'app-resume-form',
   standalone: true,
-  imports: [BasicInformationComponent, ResumePreviewComponent],
+  imports: [BasicInformationComponent, ResumePreviewComponent, CommonModule, SummaryComponent],
   templateUrl: './resume-form.component.html',
   styleUrl: './resume-form.component.css'
 })
 export class ResumeFormComponent {
-  firstNameChange: string = ''
-  lastNameChange: string = ''
-  jobTitleChange: string = ''
-  emailChange: string = ''
-  githubChange:string = ''
-  onFirstNameChange(firstName: string) {
-    this.firstNameChange = firstName
+  step = 1
+
+  goNext() {
+    this.step++
   }
 
-  onLastNameChange(lastName: string) {
-    this.lastNameChange = lastName
-  }
-
-  onLastJobTitleChange(jobTitle: string) {
-    this.jobTitleChange = jobTitle
-  }
-
-  onEmailChange(email: string) {
-    this.emailChange = email;
-  }
-
-  onGithubChange(github:string) {
-    this.githubChange = github
+  goPrev() {
+    this.step--
   }
 }
