@@ -9,4 +9,6 @@ export interface ResumeDataBaseInfo {
     linkedInUrl: string,
     githubUrl: string,
     portfolioURL: string,
+    yearsOfExperience:string,
+    skills:string
 }
