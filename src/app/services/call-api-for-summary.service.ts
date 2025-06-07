@@ -5,28 +5,26 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class OpenRouterService {
-  private apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
+export class GeminiService {
+  private apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+  private apiKey = "AIzaSyDI4oSVr5UsXeHKWfnL2HIViKPo9spoajw";
 
   constructor(private http: HttpClient) { }
 
   getChatCompletion(prompt: string): Observable<any> {
     const headers = new HttpHeaders({
-      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
     });
 
     const body = {
-      model: "google/gemma-3n-e4b-it:free",
-      max_tokens: 300,
-      messages: [
+      contents: [
         {
           role: 'user',
-          content: prompt,
+          parts: [{ text: prompt }],
         },
       ],
     };
 
-    return this.http.post(this.apiUrl, body, { headers });
+    return this.http.post(`${this.apiUrl}?key=${this.apiKey}`, body, { headers });
   }
 }
