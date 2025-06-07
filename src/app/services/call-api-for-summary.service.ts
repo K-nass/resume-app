@@ -12,7 +12,7 @@ export class OpenRouterService {
 
   getChatCompletion(prompt: string): Observable<any> {
     const headers = new HttpHeaders({
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
     });
 
