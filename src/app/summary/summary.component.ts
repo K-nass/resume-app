@@ -19,6 +19,7 @@ export class SummaryComponent {
   summary = '';
   enhancedText: string | null = null;
   resumeData!: ResumeDataBaseInfo
+  loading: boolean = false;
 
   constructor(
     private handleChangeSummaryService: HandleChangeSummaryService,
@@ -37,20 +38,31 @@ export class SummaryComponent {
 
   generateWithAI() {
     if (this.resumeData.jobTitle && this.resumeData.yearsOfExperience && this.resumeData.skills) {
+      this.loading = true;
+      const prompt = `Write a professional CV summary in exactly three lines for a ${this.resumeData.jobTitle} with ${this.resumeData.noOfExperience} years of experience. Highlight these skills: ${this.resumeData.skills}. Avoid explanation, titles, or formatting — return only the three-line summary text.`;
       this.openRouter
-        .getChatCompletion(`Generate a professional CV summary for a ${this.resumeData.jobTitle} with ${this.resumeData.yearsOfExperience} of experience. Highlight skills in ${this.resumeData.skills} in three lines.`).subscribe({
+        .getChatCompletion(prompt).subscribe({
           next: (res) => {
-            this.enhancedText = res.choices[0].message.content.replace(/^(\*\*Professional Summary\*\*\s*)/i, '').trim();
+            this.enhancedText = res.choices[0].message.content;
+            this.loading = false;
+            console.log(res.choices[0].message.content);
+
           },
           error: (err) => {
             console.error('Error:', err);
+            this.loading = false;
           },
         });
     } else {
       this.enhancedText = 'Please fill in Job Title, Years of Experience, and Skills before generating a summary.';
+      this.loading = false;
     }
   }
 }
 
 
 // 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
+
+// .replace(/^(\*\*Professional Summary\*\*\s*)/i, '').trim();
+
+// .choices[0].message.content.replace(/^(\*\*Professional Summary\*\*\s*)/i, '').trim()

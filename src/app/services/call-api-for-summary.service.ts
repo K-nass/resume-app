@@ -12,12 +12,12 @@ export class OpenRouterService {
 
   getChatCompletion(prompt: string): Observable<any> {
     const headers = new HttpHeaders({
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
       'Content-Type': 'application/json',
     });
 
     const body = {
-      model: 'openai/gpt-4o',
+      model: "google/gemma-3n-e4b-it:free",
       max_tokens: 300,
       messages: [
         {
