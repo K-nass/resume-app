@@ -33,7 +33,7 @@
 
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea (ngModel) = "experienceData.description"  (input)="updateExperience()" id="description" name="description" class="form-control" rows="3"
+        <textarea [(ngModel)] = "experienceData.description"  (input)="updateExperience()" id="description" name="description" class="form-control" rows="3"
             placeholder="Brief description of your role and responsibilities"></textarea>
     </div>
 </div>
