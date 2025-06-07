@@ -20,11 +20,20 @@
                             ✨ Generate with AI
                         </button>
                     </div>
-                    <div class="col-12 mt-3" *ngIf="enhancedText">
-                        <h5 class="fw-bold">Professional Summary</h5>
-                        <div class="card shadow-sm border-info">
-                            <div class="card-body bg-light">
-                                <p class="mb-0">{{ enhancedText }}</p>
+                    <div class="accordion col-12 mt-3" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    Professional Summary
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div *ngIf="enhancedText" class="accordion-body">
+                                    <p class="mb-0">{{ enhancedText }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
