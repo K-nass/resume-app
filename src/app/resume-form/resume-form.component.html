@@ -7,7 +7,8 @@
                     <app-basic-information></app-basic-information>
                     <div class="text-end">
                         <button (click)="goNext()" class="btn btn-primary mt-3 px-4">Next:
-                            Summary</button>
+                            Summary
+                        </button>
                     </div>
                 </div>
             </div>
@@ -16,9 +17,26 @@
             <div class="col-lg-6">
                 <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
                     <app-summary></app-summary>
-                    <div class="text-end">
+                    <div class="text-end d-flex justify-content-between">
                         <button (click)="goPrev()" class="btn btn-primary mt-3 px-4">back:
-                            Basic Information</button>
+                            Basic Information
+                        </button>
+                        <button (click)="goNext()" class="btn btn-primary mt-3 px-4">Next:
+                            Experience
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="step == 3">
+            <div class="col-lg-6">
+                <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
+                    <app-experience></app-experience>
+                    <div class="text-end d-flex justify-content-between">
+                        <button (click)="goPrev()" class="btn btn-primary mt-3 px-4">back:
+                            Summary
+                        </button>
                     </div>
                 </div>
             </div>

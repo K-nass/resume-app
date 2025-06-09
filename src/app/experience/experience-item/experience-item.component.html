@@ -1,0 +1,39 @@
+<div class="mb-4 border p-3 rounded position-relative" data-index="0">
+    <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2 remove-btn">Remove</button>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="company" class="form-label">Company Name</label>
+            <input [(ngModel)] = "experienceData.companyName" (input)="updateExperience()" type="text" id="company" name="company" class="form-control" placeholder="e.g., Google" />
+        </div>
+        <div class="col-md-6">
+            <label for="role" class="form-label">Role / Job Title</label>
+            <input [(ngModel)] = "experienceData.role" (input)="updateExperience()" type="text" id="role" name="role" class="form-control" placeholder="e.g., Software Engineer" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ali`gn-items-center">
+        <div class="col-md-5">
+            <label for="startYear" class="form-label">Start Year</label>
+            <input [(ngModel)] = "experienceData.startYear" (input)="updateExperience()" type="number" id="startYear0" name="startYear" min="1900" max="2100" class="form-control"
+                placeholder="e.g., 2019" />
+        </div>
+        <div class="col-md-5">
+            <label for="endYear" class="form-label">End Year</label>
+            <input [(ngModel)] = "experienceData.endYear" (input)="updateExperience()" type="number" id="endYear" name="endYear" min="1900" max="2100" class="form-control"
+                placeholder="e.g., 2023" />
+        </div>
+        <div class="col-md-2 mt-4 pt-2">
+            <div class="form-check">
+                <input  [(ngModel)] = "experienceData.endYear" ((change))="updateExperience()" class="form-check-input present-checkbox" type="checkbox" id="present" />
+                <label class="form-check-label" for="present">Present</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea [(ngModel)] = "experienceData.description"  (input)="updateExperience()" id="description" name="description" class="form-control" rows="3"
+            placeholder="Brief description of your role and responsibilities"></textarea>
+    </div>
+</div>

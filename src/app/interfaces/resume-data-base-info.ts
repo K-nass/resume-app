@@ -10,5 +10,5 @@ export interface ResumeDataBaseInfo {
     githubUrl: string,
     portfolioURL: string,
     yearsOfExperience:string,
-    skills:string
+    skills:string[]
 }

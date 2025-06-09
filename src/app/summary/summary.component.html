@@ -13,31 +13,30 @@
                         </textarea>
                     </div>
                 </div>
-
-                <div class="row mb-3">
+                <div class="row mb-4">
                     <div class="col-12 text-end">
-                        <button (click)="generateWithAI()" type="button" class="btn btn-outline-secondary me-2">
+                        <button (click)="generateWithAI()" type="button"
+                            class="btn btn-outline-secondary shadow-sm">
                             ✨ Generate with AI
                         </button>
                     </div>
-                    <div class="accordion col-12 mt-3" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                    aria-controls="panelsStayOpen-collapseOne">
-                                    Professional Summary
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                                aria-labelledby="panelsStayOpen-headingOne">
-                                <div *ngIf="enhancedText" class="accordion-body">
-                                    <p class="mb-0">{{ enhancedText }}</p>
-                                </div>
+
+                    <div *ngIf="enhancedText || loading" class="col-12 mt-3">
+                        <div *ngIf="loading"
+                            class="d-flex align-items-center bg-light rounded px-3 py-2 shadow-sm border">
+                            <div class="spinner-border text-primary me-3" role="status"
+                                style="width: 1.5rem; height: 1.5rem;">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
+                            <strong>Generating summary...</strong>
+                        </div>
+
+                        <div *ngIf="!loading" class="bg-light rounded p-3 shadow-sm border text-dark">
+                            <p class="mb-0" style="white-space: pre-line;">{{ enhancedText }}</p>
                         </div>
                     </div>
                 </div>
+
             </fieldset>
         </form>
     </div>
