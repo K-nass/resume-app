@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { HandleChangeBasicService } from '../../services/handle-change-basic.service';
 import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
 import { HandleChangeSummaryService } from '../../services/handle-change-summary.service';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 @Component({
   selector: 'app-resume-preview',
   standalone: true,
@@ -20,5 +22,36 @@ export class ResumePreviewComponent {
     this.handleChangeSummaryService.summary.subscribe(summary => {
       this.summary = summary
     })
+  }
+  downloadPDF(){
+    const button = document.getElementById('download-btn');
+    const element = document.getElementById('resume-preview');
+    if(!element || !button) return;
+
+    button.style.display = 'none';
+
+  html2canvas(element, {scale:2}).then(canvas =>{
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p','mm','a4');
+
+    const imgWidth = 210; //A4 width in mm
+    const pageHeight = 297; //A4 height in mm
+    const imgHeight = canvas.height * imgWidth / canvas.width;
+
+    let heightleft = imgHeight;
+    let position = 0;
+
+    pdf.addImage(imgData, 'PNG',0,position,imgWidth,imgHeight);
+    heightleft -= pageHeight;
+
+    while (heightleft > 0){
+      position = heightleft - imgHeight;
+      pdf.addPage();
+      pdf.addImage(imgData,'PNG',0,position,imgWidth,imgHeight);
+      heightleft -=pageHeight;
+    }
+    button.style.display = 'inline-block';
+    pdf.save(`${this.resumeData.firstName}_${this.resumeData.lastName}Resume.pdf`);
+  });
   }
 }
