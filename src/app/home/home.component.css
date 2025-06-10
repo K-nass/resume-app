@@ -1,0 +1,221 @@
+/* Start header */
+header{
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 7rem 0;
+}
+.header-content{
+    padding:10px;
+    margin: 20px;
+}
+.header-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+.header-content p {
+    font-size: 20px;
+}
+
+.header-btn {
+    background-color: var(--main-color);
+    color: #fff;
+    transition: 0.5s;
+}
+.header-btn:hover{
+    box-shadow: 0 0 10px rgba(2, 129, 140, 0.5);
+    color: #fff;
+}
+header img {
+    max-width: 80% ;
+    position: relative;
+    z-index: 2;
+    animation: up-and-down 5s linear infinite;
+}
+
+@keyframes up-and-down {
+
+    0%,
+    100% {
+        top: 0;
+    }
+
+    50% {
+        top: -30px;
+    }
+}
+
+/* Static circles behind image */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+.circle-1 {
+    width: 100px;
+    height: 100px;
+    background: var(--main-color);
+    top: -3rem;
+    right: 6rem;
+}
+
+.circle-2 {
+    width: 180px;
+    height: 180px;
+    background: var(--main-color);
+    bottom: -40px;
+    left: -50px;
+}
+
+.circle-3 {
+    width: 70px;
+    height: 70px;
+    background: var(--main-color);
+    top: 16rem;
+    right: 2rem;
+    transform: translateY(-50%);
+}
+.circle-4 {
+    width: 50px;
+    height: 50px;
+    background: var(--main-color);
+    top: 6rem;
+    left: 3rem;
+}
+/*Steps*/
+.step-card {
+    width: 100%;
+    margin: 20px;
+}
+.step-card img {
+    width: 80%;
+}
+.step-card h4 {
+    color: var(--secondary-color);
+}
+.step-card i {
+    padding: 10px 15px;
+    border-radius: 50%;
+    background-color: var(--asset);
+    color: #fff;
+}
+/*planner*/
+.planner .container {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-top-left-radius: 12rem;
+    border-bottom-right-radius: 12rem;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.planner-text {
+    margin: 50px;
+    padding: 10px;
+}
+.planner-text p {
+    margin: 15px;
+    font-size: 19px;
+    color: #94a3b8;
+}
+/* Reviews Section */
+        .reviews-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .review-card {
+            background: var(--light-color);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 0 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #64748b;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .reviewer-role {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+         /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--light-color);
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .accordion-button {
+            background: white;
+            border: none;
+            font-weight: 600;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: var(--main-color);
+            color: white;
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+            color: #64748b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .step-card {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* scroll btn */
+.up {
+  position: fixed;
+  bottom: 10px;
+  right: -60px;
+  background-color:var(--main-color);
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 10px 17px;
+  border-radius: 50%;
+  font-family: Arial, Tahoma;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.up.show {
+  right: 10px;
+}

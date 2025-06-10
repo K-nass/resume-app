@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+/*Global*/
+:root {
+    --main-color: #02818c;
+    --secondary-color:#001e47;
+    --asset:#ff3d3c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section-title{
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+button {
+    border-color: transparent;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+.span-decoration{
+    color: var(--asset);
+}

@@ -1,0 +1,245 @@
+<!-- navbar -->
+<app-navbar></app-navbar>
+<!-- Start header section -->
+<header class="mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
+        <div class="header-content px-3">
+          <h1>Create Your<span class="span-decoration"> Perfect Resume</span> with AI</h1>
+          <p class="mt-3">
+            Transform your career with professionally crafted resumes powered by<br>
+            artificial intelligence. Stand out from the crowd in minutes, not hours.
+          </p>
+          <button class="header-btn mt-4" (click)="navigateToForm()">Create Your Resume</button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 position-relative text-center">
+        <!-- Static circles behind image -->
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+        <img src="assets/img/header-img.png" alt="Resume Illustration">
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Start Steps section -->
+<section id="steps" class="steps my-5">
+    <div class="container">
+      <h3 class="section-title mb-2 text-center">Create Your Resume in <span class="span-decoration">3 Simple </span>
+        Steps</h3>
+      <p class="text-center fs-5 mb-4">Let AI do the hard work ... you just follow the steps!</p>
+      <div class="row text-center">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="step-card h-100">
+            <img src="assets/img/card_1.png" alt="Step 1" class="img-fluid mb-3">
+            <h4><i class="fa-solid fa-1"></i> Fill In Your Details</h4>
+            <p>Start by entering your personal and professional information in our smart, easy to use form. It’s quick,
+              simple, and intuitive.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="step-card h-100">
+            <img src="assets/img/card_2.png" alt="Step 2" class="img-fluid mb-3">
+            <h4><i class="fa-solid fa-2"></i> Let the AI Assist You</h4>
+            <p>Need improvements? Ask our AI assistant to enhance or rewrite any section of your CV from your summary to
+              your experience instantly.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="step-card h-100">
+            <img src="assets/img/card_3.png" alt="Step 3" class="img-fluid mb-3">
+            <h4><i class="fa-solid fa-3"></i> Download Your Resume</h4>
+            <p>Once you're happy with the result, export your polished resume as a high-quality PDF and start applying
+              with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Start Reviews Section -->
+<section id="reviews" class="reviews-section mt-5 mb-5">
+            <div class="container">
+                <h2 class="section-title">What Our Users Say</h2>
+                <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="review-card">
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="review-text">"This AI resume maker is absolutely incredible! I got 3 interview
+                                            calls within a week of using my new resume. The AI suggestions were spot-on and
+                                            really highlighted my strengths."</p>
+                                        <div class="reviewer-name">Sarah Johnson</div>
+                                        <div class="reviewer-role">Marketing Manager</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="review-card">
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="review-text">"As a recent graduate, I was struggling to create a professional
+                                            resume. This tool made it so easy and the results were amazing. Landed my first job
+                                            thanks to this!"</p>
+                                        <div class="reviewer-name">Michael Chen</div>
+                                        <div class="reviewer-role">Software Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="review-card">
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="review-text">"The AI suggestions for improving my work descriptions were
+                                            phenomenal. It transformed my boring job duties into compelling achievements. Highly
+                                            recommend!"</p>
+                                        <div class="reviewer-name">Emily Rodriguez</div>
+                                        <div class="reviewer-role">Project Manager</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+</section>
+<!-- Start planner section -->
+ <section class="planner py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 text-center text-lg-start">
+        <div class="planner-text px-3">
+          <h1>Design, Edit, <span class="span-decoration">Impress</span> All with the Power of AI</h1>
+          <p>Your next job starts here, Create a resume that stands out!</p>
+           <button class="header-btn mt-4"(click)="navigateToForm()">Create Your Resume</button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 text-center">
+        <div class="planner-img">
+          <img class="m-0 w-75" src="assets/img/CVs.png" alt="CVs Preview" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Start FAQ Section -->
+<section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq1">
+                                        How does the AI resume maker work?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Our AI analyzes your input data including work experience, skills, and education to
+                                        generate optimized content. It uses natural language processing to create compelling
+                                        descriptions and ensures your resume is ATS-friendly and recruiter-approved.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2">
+                                        Is my personal information secure?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely! We use enterprise-grade encryption to protect your data. Your personal
+                                        information is never shared with third parties and is stored securely on our protected
+                                        servers. You can delete your data anytime.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3">
+                                        Can I customize the generated resume?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes! While our AI creates an optimized version, you have full control to edit, modify,
+                                        and customize every aspect of your resume. Choose from multiple templates and adjust the
+                                        content to match your preferences.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4">
+                                        What formats can I download my resume in?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        You can download your resume in PDF format.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq5">
+                                        How much does it cost?
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We offer a free version with basic features and premium plans starting at $9.99/month.
+                                        Premium includes unlimited resumes, advanced AI features, multiple templates, and
+                                        priority support.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<!-- Scroll to top btn -->
+<span class="up"><i class="fa-solid fa-arrow-up"></i></span>
+<!-- footer -->
+<app-footer></app-footer>

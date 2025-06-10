@@ -4,12 +4,14 @@ import { ResumePreviewComponent } from "./resume-preview/resume-preview.componen
 import { CommonModule } from '@angular/common';
 import { SummaryComponent } from "../summary/summary.component";
 import { ExperienceComponent } from "../experience/experience.component";
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 
 @Component({
   selector: 'app-resume-form',
   standalone: true,
-  imports: [BasicInformationComponent, ResumePreviewComponent, CommonModule, SummaryComponent, ExperienceComponent],
+  imports: [BasicInformationComponent, ResumePreviewComponent, CommonModule, SummaryComponent, ExperienceComponent , NavbarComponent , FooterComponent],
   templateUrl: './resume-form.component.html',
   styleUrl: './resume-form.component.css'
 })

@@ -1,0 +1,16 @@
+/* nav */
+.navbar-brand{
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+.navbar-brand i , .footer-title i {
+    color: var(--asset);
+    font-size: 2.5rem;
+}
+.btn-login {
+    border: 1px solid var(--secondary-color);
+}
+.btn-signup{
+    background-color: var(--secondary-color);
+    color: #fff;
+}
