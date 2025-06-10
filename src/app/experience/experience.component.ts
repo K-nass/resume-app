@@ -13,13 +13,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
-  experienceData: ExperienceInterface = {
-    companyName: '',
-    role: '',
-    startYear: '',
-    endYear: '',
-    description: '',
-    presentState: false
-  }
   constructor(private handleExperienceService: HandleExperienceService) { }
+  experiences: number[] = [0]
+  experienceCounter = 1
+
+  addExperience() {
+    this.experiences.push(this.experienceCounter++)
+    console.log(this.experiences);
+  }
+
+  removeExperience(i: number) {
+    this.experiences.splice(i, 1)
+  }
+
 }
