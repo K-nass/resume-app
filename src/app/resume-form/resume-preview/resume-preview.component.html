@@ -78,11 +78,11 @@
     </section>
 
     <!-- Education -->
-    <section class="mb-4">
+    <section *ngIf="education" class="mb-4">
         <h5 class="text-primary mb-3"><i class="bi bi-mortarboard-fill"></i> Education</h5>
         <div>
-            <h6 class="fw-bold mb-0">Stanford University</h6>
-            <small>B.Sc. Computer Science <span class="text-muted">— 2019</span></small>
+            <h6 class="fw-bold mb-0">{{education.school}}</h6>
+            <small>{{education.degree}}<span class="text-muted">— {{education.graduationYear}}</span></small>
         </div>
     </section>
 

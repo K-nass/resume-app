@@ -7,6 +7,7 @@ import { HandleExperienceService } from '../../services/handle-experience.servic
 import { ExperienceInterface } from '../../interfaces/experanceinterface';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { Education, EducationService } from '../../services/handle-change-education.service';
 
 @Component({
   selector: 'app-resume-preview',
@@ -16,9 +17,15 @@ import jsPDF from 'jspdf';
   styleUrl: './resume-preview.component.css'
 })
 export class ResumePreviewComponent {
+
+  education: Education | null = null;
   constructor(private handleChangeBasicService: HandleChangeBasicService,
     private handleChangeSummaryService: HandleChangeSummaryService,
-    private handleExperienceService: HandleExperienceService) { }
+    private handleExperienceService: HandleExperienceService,
+    private educationService: EducationService) { }
+
+
+
   resumeData!: ResumeDataBaseInfo
   summary = ''
   experience!: ExperienceInterface
@@ -33,6 +40,9 @@ export class ResumePreviewComponent {
 
     this.handleExperienceService.experienceList$.subscribe(list => {
       this.newExperiences = list;
+    });
+    this.educationService.education$.subscribe(data => {
+      this.education = data;
     });
   }
 

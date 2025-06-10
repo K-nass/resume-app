@@ -37,11 +37,26 @@
                         <button (click)="goPrev()" class="btn btn-primary mt-3 px-4">back:
                             Summary
                         </button>
+                        <button (click)="goNext()" class="btn btn-primary mt-3 px-4">next:
+                            Education
+                        </button>
                     </div>
                 </div>
             </div>
         </ng-container>
 
+        <ng-container *ngIf="step == 4">
+            <div class="col-lg-6">
+                <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
+                    <app-education-form></app-education-form>
+                    <div class="text-end d-flex justify-content-between">
+                        <button (click)="goPrev()" class="btn btn-primary mt-3 px-4">back:
+                            Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
         <div class="col-lg-6">
             <div class="p-4 border rounded shadow-sm bg-white h-100 overflow-auto" style="max-height: 80vh;">
                 <app-resume-preview></app-resume-preview>
