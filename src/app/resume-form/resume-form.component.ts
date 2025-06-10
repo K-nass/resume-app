@@ -6,12 +6,14 @@ import { SummaryComponent } from "../summary/summary.component";
 import { ExperienceComponent } from "../experience/experience.component";
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
+import { EducationFormComponent } from "../education/education.component";
+
 
 
 @Component({
   selector: 'app-resume-form',
   standalone: true,
-  imports: [BasicInformationComponent, ResumePreviewComponent, CommonModule, SummaryComponent, ExperienceComponent , NavbarComponent , FooterComponent],
+  imports: [BasicInformationComponent, ResumePreviewComponent, CommonModule, SummaryComponent, ExperienceComponent , NavbarComponent , FooterComponent, EducationFormComponent, EducationFormComponent],
   templateUrl: './resume-form.component.html',
   styleUrl: './resume-form.component.css'
 })

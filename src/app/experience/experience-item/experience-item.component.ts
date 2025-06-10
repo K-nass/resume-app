@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HandleExperienceService } from '../../services/handle-experience.service';
 import { ExperienceInterface } from '../../interfaces/experanceinterface';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-experience-item',
@@ -11,16 +11,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './experience-item.component.css'
 })
 export class ExperienceItemComponent {
-  constructor(private HandleExperienceService: HandleExperienceService) { }
-  experienceData: ExperienceInterface = {
+  @Input() index!: number;
+  newExperience: ExperienceInterface = {
     companyName: '',
-    role: '',
     startYear: '',
     endYear: '',
+    role: '',
     description: '',
     presentState: false
   }
-  updateExperience() {
-    this.HandleExperienceService.updateExperience(this.experienceData)
+  constructor(private handleExperienceService: HandleExperienceService) { }
+
+  onUpdate() {
+    this.handleExperienceService.updateExperienceAt(this.index, { ...this.newExperience });
   }
 }

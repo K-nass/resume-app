@@ -7,6 +7,7 @@ import { HandleExperienceService } from '../../services/handle-experience.servic
 import { ExperienceInterface } from '../../interfaces/experanceinterface';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { Education, EducationService } from '../../services/handle-change-education.service';
 
 @Component({
   selector: 'app-resume-preview',
@@ -16,12 +17,19 @@ import jsPDF from 'jspdf';
   styleUrl: './resume-preview.component.css'
 })
 export class ResumePreviewComponent {
+
+  education: Education | null = null;
   constructor(private handleChangeBasicService: HandleChangeBasicService,
     private handleChangeSummaryService: HandleChangeSummaryService,
-  private handleExperienceService:HandleExperienceService) { }
+    private handleExperienceService: HandleExperienceService,
+    private educationService: EducationService) { }
+
+
+
   resumeData!: ResumeDataBaseInfo
   summary = ''
-  experience!:ExperienceInterface
+  experience!: ExperienceInterface
+  newExperiences: ExperienceInterface[] = [...this.handleExperienceService.experienceList]
   ngOnInit() {
     this.handleChangeBasicService.resumeData.subscribe(data => {
       this.resumeData = data
@@ -30,37 +38,42 @@ export class ResumePreviewComponent {
       this.summary = summary
     })
 
-    this.handleExperienceService.experience.subscribe(experience => {
-      this.experience = experience
-    })
+    this.handleExperienceService.experienceList$.subscribe(list => {
+      this.newExperiences = list;
+    });
+    this.educationService.education$.subscribe(data => {
+      this.education = data;
+    });
   }
-  downloadPDF(){
+
+
+  downloadPDF() {
     const button = document.getElementById('download-btn');
     const element = document.getElementById('resume-preview');
-    if(!element || !button) return;
+    if (!element || !button) return;
 
 
-  html2canvas(element, {scale:2}).then(canvas =>{
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF('p','mm','a4');
+    html2canvas(element, { scale: 2 }).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
 
-    const imgWidth = 210; //A4 width in mm
-    const pageHeight = 297; //A4 height in mm
-    const imgHeight = canvas.height * imgWidth / canvas.width;
+      const imgWidth = 210; //A4 width in mm
+      const pageHeight = 297; //A4 height in mm
+      const imgHeight = canvas.height * imgWidth / canvas.width;
 
-    let heightleft = imgHeight;
-    let position = 0;
+      let heightleft = imgHeight;
+      let position = 0;
 
-    pdf.addImage(imgData, 'PNG',0,position,imgWidth,imgHeight);
-    heightleft -= pageHeight;
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightleft -= pageHeight;
 
-    while (heightleft > 0){
-      position = heightleft - imgHeight;
-      pdf.addPage();
-      pdf.addImage(imgData,'PNG',0,position,imgWidth,imgHeight);
-      heightleft -=pageHeight;
-    }
-    pdf.save(`${this.resumeData.firstName}_${this.resumeData.lastName}Resume.pdf`);
-  });
+      while (heightleft > 0) {
+        position = heightleft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightleft -= pageHeight;
+      }
+      pdf.save(`${this.resumeData.firstName}_${this.resumeData.lastName}Resume.pdf`);
+    });
   }
 }

@@ -4,5 +4,5 @@ export interface ExperienceInterface {
     startYear: string
     endYear: string
     presentState?: boolean
-    description: string
+    description?: string
 }

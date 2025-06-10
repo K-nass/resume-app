@@ -62,30 +62,30 @@
         </ul>
     </section>
     <!-- Work Experience -->
-    <section class="mb-4">
+    <section class="mb-4" *ngIf="newExperiences.length">
         <h5 class="text-primary mb-3"><i class="bi bi-briefcase-fill"></i> Work Experience</h5>
-        <div class="mb-3">
-            <h6 class="fw-bold">{{experience.companyName}} <span class="text-muted fw-normal">
-                    {{experience.role + ' '}} ({{experience.startYear}} - {{experience.endYear}})</span>
+        <div class="mb-3" *ngFor="let experience of newExperiences">
+            <h6 class="fw-bold">
+                {{ experience.companyName }}
+                <span class="text-muted fw-normal">
+                    {{ experience.role }} ({{ experience.startYear }} - {{ experience.endYear || 'Present' }})
+                </span>
             </h6>
             <div class="mb-0 ps-4">
-                <!-- <li>Built scalable UI components using React</li>
-                <li>Improved performance by 30%</li> -->
-
-                {{experience.description}}
+                {{ experience.description }}
             </div>
         </div>
     </section>
 
     <!-- Education -->
-    <section class="mb-4">
+    <section *ngIf="education" class="mb-4">
         <h5 class="text-primary mb-3"><i class="bi bi-mortarboard-fill"></i> Education</h5>
         <div>
-            <h6 class="fw-bold mb-0">Stanford University</h6>
-            <small>B.Sc. Computer Science <span class="text-muted">— 2019</span></small>
+            <h6 class="fw-bold mb-0">{{education.school}}</h6>
+            <small>{{education.degree}}<span class="text-muted">— {{education.graduationYear}}</span></small>
         </div>
     </section>
 
     <!-- Convert cv Button into pdf -->
-  </div>
-  <button id="download-btn" class="btn btn-primary mt-4" (click)="downloadPDF()">Save as pdf</button>
+</div>
+<button id="download-btn" class="btn btn-primary mt-4" (click)="downloadPDF()">Save as pdf</button>

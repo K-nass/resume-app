@@ -4,26 +4,36 @@
             <fieldset class="border p-4 rounded shadow-sm">
                 <legend class="float-none w-auto px-2">Work Experience</legend>
                 <div id="experienceList">
+                    <button *ngIf="!experiences.length" type="button" class="btn btn-primary" (click)="addExperience()">
+                        Add Experience
+                    </button>
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                        <div class="accordion-item" *ngFor="let exp of experiences; let i = index">
+                            <h2 class="accordion-header" [id]="'heading' + i">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Work History Summary
+                                    [attr.data-bs-target]="'#collapse' + i" aria-expanded="true"
+                                    [attr.aria-controls]="'collapse' + i">
+                                    Work History Summary #{{ i + 1 }}
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
+                            <div [id]="'collapse' + i" class="accordion-collapse collapse show"
+                                [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <app-experience-item></app-experience-item>
+                                    <app-experience-item [index]="i"></app-experience-item>
                                 </div>
+                            </div>
+                            <div class="position-relative mt-3">
+                                <button type="button" class="btn btn-primary" (click)="addExperience()">
+                                    Add Experience
+                                </button>
+
+                                <button (click)="removeExperience(i)" type="button"
+                                    class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2">
+                                    Remove
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-3">
-                    <button type="button" class="btn btn-primary" id="addExperienceBtn">Add Experience</button>
                 </div>
             </fieldset>
         </form>
