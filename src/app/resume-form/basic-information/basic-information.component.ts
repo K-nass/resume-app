@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HandleChangeBasicService } from '../../services/handle-change-basic.service';
 import { ResumeDataBaseInfo } from '../../interfaces/resume-data-base-info';
 import { GeminiService } from '../../services/call-api-for-summary.service';
-// import { OpenRouterService } from '../../services/call-api-for-summary.service';
 
 
 @Component({

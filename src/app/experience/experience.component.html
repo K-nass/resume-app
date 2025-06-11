@@ -21,6 +21,26 @@
                                 <div class="accordion-body">
                                     <app-experience-item [index]="i"></app-experience-item>
                                 </div>
+                                <div class="col-12 text-end">
+                                    <button (click)="generateWithAI(i)" type="button"
+                                        class="btn btn-outline-secondary shadow-sm">
+                                        ✨ Generate with AI
+                                    </button>
+                                </div>
+                                <div *ngIf="enhancedText || loading" class="col-12 mt-3">
+                                    <div *ngIf="loading"
+                                        class="d-flex align-items-center bg-light rounded px-3 py-2 shadow-sm border">
+                                        <div class="spinner-border text-primary me-3" role="status"
+                                            style="width: 1.5rem; height: 1.5rem;">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <strong>Generating summary...</strong>
+                                    </div>
+
+                                    <div *ngIf="!loading" class="bg-light rounded p-3 shadow-sm border text-dark">
+                                        <p class="mb-0" style="white-space: pre-line;">{{ enhancedText }}</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="position-relative mt-3">
                                 <button type="button" class="btn btn-primary" (click)="addExperience()">
